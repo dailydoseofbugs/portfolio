@@ -2,6 +2,7 @@ import { useEffect, useRef } from 'react'
 import gsap from 'gsap-trial'
 import DrawSVGPlugin from 'gsap-trial/DrawSVGPlugin'
 import LogoS from '../../../assets/images/logo-s.png'
+import DrawSVG from 'react-svg-drawing'
 import './index.scss'
 
 const Logo = () => {
@@ -9,27 +10,27 @@ const Logo = () => {
     const outlineLogoRef = useRef(false)
     const solidLogoRef = useRef(false)
 
-    useEffect(() => {
-        gsap.registerPlugin(DrawSVGPlugin)
+    // useEffect(() => {
+    //     gsap.registerPlugin(DrawSVGPlugin)
 
-        gsap
-            .timeline()
-            .to(bgRef.current, {
-                duration: 1,
-                opacity: 1,
-            })
-            .from(outlineLogoRef.current, {
-                drawSVG: 0,
-                duration: 17,
-            })
-
-
-        if (outlineLogoRef.current) {
-            outlineLogoRef.current = true
-        }
+    //     gsap
+    //         .timeline()
+    //         .to(bgRef.current, {
+    //             duration: 1,
+    //             opacity: 1,
+    //         })
+    //         .from(outlineLogoRef.current, {
+    //             drawSVG: 0,
+    //             duration: 17,
+    //         })
 
 
-    }, [])
+    //     if (outlineLogoRef.current) {
+    //         outlineLogoRef.current = true
+    //     }
+
+
+    // }, [])
 
     return (
         <div className="logo-container" ref={bgRef}>
@@ -58,15 +59,13 @@ const Logo = () => {
                     />
                 </g>
             </svg> */}
-            <svg
-                style={{ width: '820px' }}
-                version="1.0"
-                viewBox="0 0 559 897" xmlns="http://www.w3.org/2000/svg">
-                <g className="svg-container"
-                    transform="translate(110 0)"
-                    fill="none">
-                    <path ref={outlineLogoRef} d="M183.967 86.9455C252.62 12.0977 244.517 75.8891 263.023 85.1447C268.275 87.7725 275.324 85.0069 279.193 83.347 M219.968 106.121C241.931 80.0587 278.638 143.309 281.516 119.913 M157.258 63.7549C121.516 74.7106 105.852 117.17 121.513 148.401 M110.544 171.591C97.2219 190.533 110.121 194.598 125.903 188.961 M125.988 193.171C121.915 260.485 266.13 345.452 275.71 186.666 M176.84 149.305C192.345 148.711 256.228 140.836 268.06 147.641C290.76 160.692 276.999 199.124 249.499 202.832C225.999 206 214.898 146.506 217.717 146.902C224.482 147.853 222.319 190.253 209.856 202.832C182.676 230.265 152.592 179.295 168.142 153.514 M79 346.16C109.376 314.794 132.649 289 175.228 289C180.405 298.068 196.368 316.205 218.81 316.205C241.252 316.205 246.862 298.068 246.862 289C302.967 289 307.115 331.849 321 349" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"></path>
-                </g></svg>
+            <div style={{ backgroundColor: 'red', border: '3px solid black' }}>
+                <DrawSVG strokeWidth="10" duration="5000" easing="easeInQuad" >
+                    <svg viewBox="-200 0 597 800">
+                        <path d="M183.967 86.9455C252.62 12.0977 244.517 75.8891 263.023 85.1447C268.275 87.7725 275.324 85.0069 279.193 83.347 M219.968 106.121C241.931 80.0587 278.638 143.309 281.516 119.913 M157.258 63.7549C121.516 74.7106 105.852 117.17 121.513 148.401 M110.544 171.591C97.2219 190.533 110.121 194.598 125.903 188.961 M125.988 193.171C121.915 260.485 266.13 345.452 275.71 186.666 M176.84 149.305C192.345 148.711 256.228 140.836 268.06 147.641C290.76 160.692 276.999 199.124 249.499 202.832C225.999 206 214.898 146.506 217.717 146.902C224.482 147.853 222.319 190.253 209.856 202.832C182.676 230.265 152.592 179.295 168.142 153.514 M79 346.16C109.376 314.794 132.649 289 175.228 289C180.405 298.068 196.368 316.205 218.81 316.205C241.252 316.205 246.862 298.068 246.862 289C302.967 289 307.115 331.849 321 349"></path>
+                    </svg>
+                </DrawSVG>
+            </div>
         </div>
     )
 }
