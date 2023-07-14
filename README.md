@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
@@ -73,3 +74,7 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 # portfolio
 Portfolio made in react
 >>>>>>> c932382 (Initial commit)
+=======
+# portfolio
+Portfolio made in react
+>>>>>>> c932382537e06768ea0930e587d35734b83bf4a2
